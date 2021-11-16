@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>student result</title>
+</head>
+<style>
+*{
+margin: 0;
+  padding: 0;
+  
+}
+
+body{
+background-color:yellowgreen ;
+border: 5px dashed white;
+width: 60%;
+height: 80%;
+text-align: right;
+border-radius: 200px;
+border-style:none ;
+}
+
+h1{ 
+text-align: left;
+padding: 20px 50;
+color: blue;
+font-size: 5em;
+font-style: italic;
+font-weight: bold;
+letter-spacing: 10px;
+}
+.app-form{
+margin: 10px;
+padding: 5px;
+text-align: top;
+margin-top: -10px;
+text-decoration-style: none;
+}
+
+
+</style>
+<body>
+<h1>STUDENT GRADE CALACY</h1>
+
+  <div class="screen-body">  </div>
+<div class="app-form">
+<input type="text" class="app-form" id="wd" placeholder="Chemistry">
+</div>
+<div class="app-form">
+  <input type="text" class="app-form" id="math" placeholder="maths">
+  </div>
+  <div class="app-form">
+    <input type="text" class="app-form" id="comp" placeholder="computer">
+    </div>
+    <div class="app-form">
+      <input type="text" class="app-form" id="phy" placeholder="physics">
+      </div>
+      <div>
+        <input type="button" name="" value="show persentage"
+        class="app-form-button" onclick="calsy()">
+      </div>
+<div class="app-form-group showdate">
+  <p id="showDate"></p>
+</div>
+
+<script>
+const calsy =()=>{
+let wd = document.getElementById('wd').value;
+let math = document.getElementById('math').value;
+let comp = document.getElementById('comp').value;
+let phy = document.getElementById('phy').value;
+let grades =" ";
+
+console.log(wd);
+let totalGrades = parseFloat(wd)  + parseFloat(math) + parseFloat(comp)+ parseFloat(phy) ;
+ alert(totalGrades);
+
+ let perc =(totalGrades/400) *100;
+
+if(perc <= 100 && perc >= 80 ){
+  grades ='A' ;
+}else if(perc <= 79 && perc >= 60 ) {
+grades='B' ;
+}else if(perc <= 59 && perc >= 40){
+  grades='C' ;
+}else {
+  grades ='F';
+}
+if(perc >= 35){
+  document.getElementById('showDate').innerHTML= ` Out of 400 your total is ${totalGrades} and persentage is ${perc}%. 
+br Your grade  is${grades} br. CONGRATULATIONS YOU ARE PASS. `
+} 
+else{ document.getElementById('showDate').innerHTML= ` Out of 400 your total is ${totalGrades} and persentage is ${perc}%. 
+br Your grade  is${grades} .  TRY AGAIN YOU ARE FAIL. `
+
+}
+
+
+}
+
+</script>
+
+</body>
+</html>
